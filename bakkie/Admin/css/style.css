@@ -1,0 +1,16 @@
+body {
+    font-family: cursive, monospace, sans-serif, serif;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+}
+.button-group {
+    display: flex;
+    justify-content: end;
+    height: fit-content;
+}
+.sub-btns {
+    margin-right: 10px;
+}

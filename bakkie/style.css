@@ -1,0 +1,33 @@
+.bg-img {
+    background-image: url(bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    height: 670px;
+    position: relative;
+}
+.menu {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    position: absolute;
+    margin-top: 30px;
+    /* background-image: url(southafrica.jpg); */
+}
+.logo-img {
+    background-image: url(logo.png);
+    width: 125px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu-bar {
+    font-family: cursive;
+    font-size: 25px;
+    font-weight: 600;
+}
+a {
+    margin-right: 20px;
+}
