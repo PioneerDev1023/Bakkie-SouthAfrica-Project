@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="shortcut icon" href="./../../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../RU/plugin/bootstrap-4.5.0/css/bootstrap.min.css">
     <title>Login Form</title>
-    <script>
+    <!-- <script>
         var seltown = "<?php echo $_GET['seltown']; ?>";
         // console.log(seltowm);
-    </script>
+    </script> -->
 
 </head>
 
@@ -22,7 +22,8 @@
                 <!-- REGISTER AREA  -->
                 <h2 style="font-weight: 800; text-decoration: underline;">Hire-my-Bakkie</h2>
 
-                <form action="inc/handler.inc.php" method="post" class="form" id="register-form" enctype="multipart/form-data" style="border-bottom: 2px solid lightgrey; margin-bottom: 15px;">
+                <!-- <form class="form form-content" id="register-form" enctype="multipart/form-data" style="border-bottom: 2px solid lightgrey; margin-bottom: 15px;"> -->
+                <form class="form" id="register-form" enctype="multipart/form-data" style="border-bottom: 2px solid lightgrey; margin-bottom: 25px;">
                     <input type="hidden" name="status" id="status" value="register">
 
                     <div class="errorLogs"></div>
@@ -33,21 +34,21 @@
                             <img class="user-img" id="user_photo" src="./../../RU/inc/uploads/3c1348b7c0698faca8657eef345a2314.jpg" height="100%" width="100%" alt="No driver photo">
                         </label>
                         <div class="col-md-6 col-sm-12 col-xs-12">
-                            <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Your nickname(what people call you)" style="margin-bottom: 5px; text-align: center; color: red; text-decoration: underline; font-weight: 700;">
+                            <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Your nickname(what people call you)" style="margin-bottom: 5px; text-align: center; color: red; text-decoration: underline; font-weight: 700;" readonly>
 
                             <div class="form-group d-flex justify-content-between" style="box-sizing: border-box; margin-bottom: 5px;">
-                                <input name="country" id="country" class="form-control" style="margin-right: 10px;display:none;" required data-rule="minlen:5" data-msg="Please select on your province">
+                                <input name="country" id="country" class="form-control" style="margin-right: 10px;display:none;" required data-rule="minlen:5" data-msg="Please select on your province"  readonly>
                                 </input>
-                                <input name="province" id="province" class="form-control" style="margin-right: 10px; font-weight: 700; text-align: center;" placeholder="Province">
+                                <input name="province" id="province" class="form-control" style="margin-right: 10px; font-weight: 700; text-align: center;"  placeholder="Province" readonly>
                                 </input>
-                                <input name="hometown" id="hometown" class="form-control" style="font-weight: 700; text-align: center;" placeholder="City/Town">
+                                <input name="hometown" id="hometown" class="form-control" style="font-weight: 700; text-align: center;" placeholder="City/Town"  readonly>
                                 </input>
                             </div>
 
                             <div class="form-group d-flex justify-content-between flex-wrap" style=" margin-bottom: 5px;">
                                 <div class="col-12 d-flex align-items-center justify-content-between">
                                     <h4 style="margin-bottom: 0px;">R</h4>
-                                    <input type="number" name="daily_rate" id="daily_rate" class="form-control col-4" placeholder="Amount" style="    margin-bottom: 10px; text-align: center; color: red; font-weight: 700;">
+                                    <input type="number" name="daily_rate" id="daily_rate" class="form-control col-4" placeholder="Amount" style="    margin-bottom: 10px; text-align: center; color: red; font-weight: 700;"  readonly>
                                     <h6 class="col-7" style="margin-bottom: 10px;">Daily Rate <span>(Unlimited km's-8hrs)</span></h6>
                                 </div>
 
@@ -55,17 +56,16 @@
 
                                 <div class="col-12 d-flex align-items-center justify-content-between">
                                     <h6 style="margin-bottom: 0px;">Free</h6>
-                                    <input type="number" name="free_rate" id="free_rate" class="form-control col-3" placeholder="Enter Km's" style="margin-bottom: 10px; text-align: center; color: red; font-weight: 700;">
+                                    <input type="number" name="free_rate" id="free_rate" class="form-control col-3" placeholder="Enter Km's" style="margin-bottom: 10px; text-align: center; color: red; font-weight: 700;"  readonly>
                                     <h6 style="margin-bottom: 0px;">km's</h6>
                                     
                                     <h4 style="margin-bottom: 0px; padding-left: 20px">R</h4>
-                                    <input type="number" name="hoc_rate" id="hoc_rate" class="form-control col-3" placeholder="Amount" style="text-align: center; color: red; font-weight: 700;">
+                                    <input type="number" name="hoc_rate" id="hoc_rate" class="form-control col-3" placeholder="Amount" style="text-align: center; color: red; font-weight: 700;"  readonly>
                                     <h6 style="margin-bottom: 0px;">Ad Hoc Rate</h6>
                                 </div>                        
                             </div>
-                            <button style="border: none; background-color: white;">
-                                <img style="width: 50px;"src="../images/whatsapp.png"></img>
-                            </button>
+                            <div  id='form-content'></div>
+                            
                         </div>
                         <label class="btn btn-secondary col-md-3 col-sm-12 col-xs-12" style="background-color: white; border: none; color: red;">
                             <!-- <i class="fa fa-image"></i>Picture of your bakkie(front & side-numberplate blanked)
@@ -80,13 +80,25 @@
             </row>
         </div>
     </div>
-
-
-
-
-    <script src="./../js/jQuery-v3.5.1.js"></script>
-    <script src="main.js"></script>
     
+    <script src="../js/jQuery-v3.5.1.js"></script>
+    <script src="main.js"></script>
+    <script>
+        function displayDate(email){
+            $.get("approve.php?email=" + email + "&app=ok", function(data, status){
+                if(data == 'success'){
+                    alert('success');
+                }
+            });
+        }
+        function displayDate1(email){
+            $.get("approve.php?email=" + email + "&app=unok", function(data, status){
+                if(data == 'success'){
+                    alert('success');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

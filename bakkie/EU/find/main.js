@@ -5,7 +5,7 @@ $(document).ready(function(){
         seltown: seltown
     }, 
     function(data, status){
-        alert("Data: " + data +"\nStatus: " + status);
+        // alert("Data: " + data +"\nStatus: " + status);
         var show_data = JSON.parse(data);
         var obj_len = (Object.keys(show_data).length);
         for(var i = 0; i < obj_len; i++){

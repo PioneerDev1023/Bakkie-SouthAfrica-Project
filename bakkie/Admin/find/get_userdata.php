@@ -1,9 +1,9 @@
 <?php
-    include_once './../view/config/Database.php';
-    $seltown = $_POST['seltown'];
+    include_once 'Database.php';
+    // $seltown = $_POST['seltown'];
     $database = new Database();
     $db = $database->getConnection();
-    $sql = "SELECT * FROM users WHERE hometown='".$seltown."' AND approve IS NOT NULL";
+    $sql = "SELECT * FROM users WHERE approve IS NULL ORDER BY timeStamp DESC";
     $result = $db->query($sql);
     $sendData = array();
     if ($result->num_rows > 0) {
@@ -11,6 +11,7 @@
         while($row = $result->fetch_assoc()) {
           $sendData[] = array(
             'user_photo' => $row['user_photo'],
+            'email'=>$row['email'],
             'nickname' => $row['nickname'],
             'province' => $row['province'],
             'hometown' => $row['hometown'],

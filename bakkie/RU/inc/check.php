@@ -1,9 +1,10 @@
 <?php
-    include_once './../view/config/Database.php';
-    $seltown = $_POST['seltown'];
-    $database = new Database();
-    $db = $database->getConnection();
-    $sql = "SELECT * FROM users WHERE hometown='".$seltown."' AND approve IS NOT NULL";
+    include_once 'config.inc.php';
+    $email = $_POST['email'];
+    // $database = new Database();
+    // $db = $database->getConnection();
+    $sql = "SELECT * FROM users WHERE email='".$email."' AND approve = 'OK'";
+    // $sql = "SELECT * FROM users WHERE email='".$email."' ";
     $result = $db->query($sql);
     $sendData = array();
     if ($result->num_rows > 0) {

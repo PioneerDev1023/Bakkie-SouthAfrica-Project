@@ -89,7 +89,8 @@
                     <div class="errorLogs"></div>
                     <div class="form-group d-flex flex-wrap">
                         <label class="btn btn-secondary col-md-3 col-sm-12 col-xs-12">
-                            <i class="fa fa-image"></i>Picture of your face(head & shoulders)<input type="file" name="user_photo" id="user_photo" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/bmp" data-rule-required="true" onchange="previewFile1()">
+                            <i class="fa fa-image"></i>Picture of your face(head & shoulders)<input type="file" name="user_photo" id="user_photo" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/bmp" data-rule="required" data-msg="Choose your photo" onchange="previewFile1()">
+                            <div class="validation text-left text-danger"></div>
                             <img class="user-img" src="" height="200px" width="249px" alt="Image preview...">
                         </label>
                         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -97,21 +98,24 @@
                             <div class="validation text-left text-danger"></div>
 
                             <div class="form-group d-flex justify-content-between" style="box-sizing: border-box;">
-                                <select name="country" id="country" class="form-control" style="margin-right: 10px;display:none;" required data-rule="minlen:5" data-msg="Please select on your province">
+                                <select name="country" id="country" class="form-control" style="margin-right: 10px;display:none;" data-rule="minlen:5" data-msg="Please select on your country">
                                     <option value="" selected="selected">Select country</option>
                                 </select>
-                                <select name="province" id="province" class="form-control" style="margin-right: 10px;" data-rule-required="true">
+                                <select name="province" id="province" class="form-control" style="margin-right: 10px;" data-rule="required" data-msg="Select on your province">
                                     <option value="" selected="selected">Select PROVINCE</option>
                                 </select>
-                                <select name="hometown" id="hometown" class="form-control" data-rule-required="true">
+                                <div class="validation text-left text-danger"></div>
+                                <select name="hometown" id="hometown" class="form-control" data-rule="required" data-msg="Select on your city/town">
                                     <option value="" selected="selected">Select TOWN/CITY</option>
                                 </select>
+                                <div class="validation text-left text-danger"></div>
                             </div>
 
                             <div class="form-group d-flex justify-content-between flex-wrap">
                                 <div class="col-12 d-flex align-items-center justify-content-between">
                                     <h4 style="margin-bottom: 0px;">R</h4>
-                                    <input type="number" name="daily_rate" id="daily_rate" class="form-control col-4" placeholder="Amount" data-rule="minlen:1" data-msg="Please enter Daily Rate" >
+                                    <input type="number" name="daily_rate" id="daily_rate" class="form-control col-4" placeholder="Amount" data-rule="required" data-msg="Please enter Daily Rate" >
+                                    <div class="validation text-left text-danger"></div>
                                     <h6 class="col-7" style="margin-bottom: 0px;">Daily Rate <span>(Unlimited km's-8hrs)</span></h6>
                                 </div>
 
@@ -120,10 +124,12 @@
                                 <div class="col-12 d-flex align-items-center justify-content-between">
                                     <h6 style="margin-bottom: 0px;">Free</h6>
                                     <input type="number" name="free_rate" id="free_rate" class="form-control col-3" placeholder="Enter Km's" data-rule="minlen:1" data-msg="Please enter Free Km's" required>
+                                    <div class="validation text-left text-danger"></div>
                                     <h6 style="margin-bottom: 0px;">km's</h6>
                                     
                                     <h4 style="margin-bottom: 0px; padding-left: 20px">R</h4>
                                     <input type="number" name="hoc_rate" id="hoc_rate" class="form-control col-3" placeholder="Amount" data-rule="minlen:1" data-msg="Please enter Ad Hoc Rate" required>
+                                    <div class="validation text-left text-danger"></div>
                                     <h6 style="margin-bottom: 0px;">Ad Hoc Rate</h6>
                                 </div>                        
                                 <div class="validation text-left text-danger"></div>
@@ -132,7 +138,8 @@
                             <div class="validation text-left text-danger"></div>
                         </div>
                         <label class="btn btn-secondary col-md-3 col-sm-12 col-xs-12">
-                            <i class="fa fa-image"></i>Picture of your bakkie(front & side-numberplate blanked)<input type="file" name="bakkie_photo" id="bakkie_photo" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/bmp" data-rule-required="true" onchange="previewFile2()">
+                            <i class="fa fa-image"></i>Picture of your bakkie(front & side-numberplate blanked)<input type="file" name="bakkie_photo" id="bakkie_photo" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/bmp" data-rule="required" data-msg="Choose your bakkie photo" onchange="previewFile2()">
+                            <div class="validation text-left text-danger"></div>
                             <img class="bakkie-img" src="" height="200px" width="249px" alt="Image preview...">
                         </label>
                     
@@ -153,13 +160,16 @@
                             <div class="validation text-left text-danger pwd-retype"></div>
                         </div>
                         <label class="from-group justify-content-between col-md-3 col-sm-12 btn btn-secondary">
-                            <i class="fa fa-image"></i>Copy Picture of your driver license: <input type="file" name="license_photo" id="license_photo" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/bmp" data-rule-required="true" onchange="previewFile3()">
+                            <i class="fa fa-image"></i>Copy Picture of your driver license: <input type="file" name="license_photo" id="license_photo" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/bmp" data-rule="required" onchange="previewFile3()">
+                            <div class="validation text-left text-danger"></div>
                             <img class="license-img" src="" height="200px" width="249px" alt="Image preview...">
                         </label>
+                        
                                              
                     </div>
                                         
                     <button type="submit" class="register btn btn-block" style="width: 350px; margin: 0 auto;" id="register">Register</button>
+                    
 
                     <div class="link mt-4">
                         <p>Already a member ? <a href="index.php" id="loginLink">Login </a></p>

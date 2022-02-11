@@ -157,6 +157,7 @@ if ($status == 'register') {
                     $user = array(
                         'username' => $username,
                         'surname' => $surname,
+                        'email' => $email,
                         'user_photo' => $user_photo
                     );
                     $_SESSION['user'] = $user;

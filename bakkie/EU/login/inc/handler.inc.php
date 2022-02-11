@@ -19,7 +19,7 @@ if ($status == 'register') {
     if ($password != $re_pass) {
         echo "<script>alert('Password is incorrect!'); document.location.href='../register.php'</script>";
     } else {
-        $sql = "SELECT id FROM users WHERE email=?;";
+        $sql = "SELECT id FROM employers WHERE email=?;";
         $stmt = mysqli_stmt_init($db);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             echo "<script>alert('Database Error!'); document.location.href='../register.php'</script>";
@@ -42,7 +42,7 @@ if ($status == 'register') {
                         'surname' => $surname,
                     );
                     $_SESSION['user'] = $user;
-                    echo "<script>alert('Success!'); document.location.href='.../country-map.php'</script>";
+                    echo "<script>alert('Success!'); document.location.href='./../../country-map.php'</script>";
                 } else {
                     echo "<script>alert('Error occured!'); document.location.href='../register.php'</script>";
                 }
