@@ -1,0 +1,4 @@
+.app-button:hover {
+    transform: scale(1.5);
+    animation-duration: 2s;
+}
